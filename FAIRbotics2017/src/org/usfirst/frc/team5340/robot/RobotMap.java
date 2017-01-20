@@ -25,13 +25,8 @@ public class RobotMap {
 	public static Joystick driveStick2 = new Joystick(RobotMap.DRIVE_STICK_PORT_2);
 	
 	//Motor Ports
-	public static int LEFT_MOTOR = 1;
-	public static int RIGHT_MOTOR = 3;
-	public static int R_LEFT_MOTOR = 2;
-	public static int R_RIGHT_MOTOR = 0;
-	//public static int R_LIFT_MOTOR = 4;
-	//public static int L_LIFT_MOTOR = 5;
-	public static int LIFT_MOTOR = 5;
+	public static int LEFT_MOTOR = 0;
+	public static int RIGHT_MOTOR = 1;
 	
 	//Joystick Ports
 	public static final int DRIVE_STICK_PORT = 0;

@@ -6,7 +6,7 @@ import org.usfirst.frc.team5340.robot.RobotMap;
 import org.usfirst.frc.team5340.robot.commands.DriveWStick;
 
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -19,24 +19,18 @@ public class DriveTrain extends Subsystem {
     
 	RobotDrive driveTrain;
 	
-    Talon leftMotor;
-    Talon rLeftMotor;
-    Talon rightMotor;
-    Talon rRightMotor;
+    Victor leftMotor;
+    Victor rightMotor;
     OI joysticks;
     
     
     public DriveTrain(){
     	if(RobotMap.usingFourMotors){
-    	leftMotor = new Talon(RobotMap.LEFT_MOTOR);
-    	rLeftMotor = new Talon(RobotMap.R_LEFT_MOTOR);
-    	rightMotor = new Talon(RobotMap.RIGHT_MOTOR);
-    	rRightMotor = new Talon(RobotMap.R_RIGHT_MOTOR);
-    	driveTrain = new RobotDrive(leftMotor, rLeftMotor, rightMotor, rRightMotor);
+    	leftMotor = new Victor(RobotMap.LEFT_MOTOR);
+    	rightMotor = new Victor(RobotMap.RIGHT_MOTOR);
+    	driveTrain = new RobotDrive(leftMotor, rightMotor);
     	driveTrain.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
-    	driveTrain.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
     	driveTrain.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
-    	driveTrain.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
     	
   
     	}
@@ -49,14 +43,14 @@ public class DriveTrain extends Subsystem {
     }
     
     public void mecaDrive() {
-    	driveTrain.mecanumDrive_Cartesian(Robot.oi.driveStick2.getX() * 1.0, Robot.oi.driveStick2.getY() * 1.0, Robot.oi.driveStick2.getZ() * 1.0, 0);
+    	driveTrain.tankDrive(Robot.oi.driveStick2.getX() * 0.2, Robot.oi.driveStick2.getY() * 0.2);
     	
 //    	As of right now (11/29/16) there is a negative value assigned to driveStick2's X value, the robot is strafing backwards this is the current fix.
 //    	Above problem has been fixed as of (12/some date/16)
     	
     }
     
-    public void autoTank() {
-    	driveTrain.tankDrive(-.6, .6, true);
-    }
+//    public void autoTank() {
+//    	driveTrain.tankDrive(-.6, .6, true);
+//    }
 }
