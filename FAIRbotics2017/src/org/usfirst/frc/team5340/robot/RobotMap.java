@@ -29,10 +29,8 @@ public class RobotMap {
 	public static int RIGHT_MOTOR = 1;
 	
 	//Pneumatics
-	public static int MAIN_PNU =3 ;
-	public static int SECONDARY_PNU = 2 ;
-	public static int PNEUMATIC_SAFETY = 0;
-	public static int PNEUMATIC2 = 1;
+	public static int FLIPPER_SOLENOID = 1;
+	public static int GRIPPER_SOLENOID = 0;
 	
 	//Joystick Ports
 	public static final int DRIVE_STICK_PORT = 0;
