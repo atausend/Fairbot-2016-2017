@@ -1,12 +1,13 @@
 
 package org.usfirst.frc.team5340.robot;
 
-import org.usfirst.frc.team5340.robot.commands.AutoGroup;
+//import org.usfirst.frc.team5340.robot.commands.AutoGroup;
 import org.usfirst.frc.team5340.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team5340.robot.subsystems.Elevator;
+import org.usfirst.frc.team5340.robot.subsystems.PneumaticSafety;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.command.Command;
+//import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
@@ -21,8 +22,11 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static DriveTrain driveSub = new DriveTrain();
 	public static Elevator eleSub = new Elevator();
-    Command autonomousCommand = new AutoGroup();
-	boolean autoEnable = true;
+	public static Elevator eleSub2 = new Elevator2();
+//	public static PneumaticSafety safeSub = new PneumaticSafety();
+	public static PneumaticSafety safeSub;
+//    Command autonomousCommand = new AutoGroup();
+//	boolean autoEnable = true;
 	
     /**
      * This function is run when the robot is first started up and should be
@@ -42,8 +46,8 @@ public class Robot extends IterativeRobot {
     public void autonomousInit() {
         // schedule the autonomous command (example)
         //if (autonomousCommand != null) autonomousCommand.start();
-    	if(!autoEnable) return;
-    		autonomousCommand.start();
+//    	if(!autoEnable) return;
+//    		autonomousCommand.start();
     		//Robot.
         
     	}
@@ -61,7 +65,7 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        if (autonomousCommand != null) autonomousCommand.cancel();
+ //       if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
     /**

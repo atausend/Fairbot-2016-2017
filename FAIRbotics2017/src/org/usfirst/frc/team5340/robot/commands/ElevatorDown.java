@@ -32,11 +32,43 @@ public class ElevatorDown extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.eleSub.ElevatorStop();
+//    	Robot.eleSub.ElevatorStop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
-    protected void interrupted() {
+    protected void interrupted() { 
     }
-}
+    public class ElevatorDown2 extends Command {
+
+        public ElevatorDown2() {
+            // Use requires() here to declare subsystem dependencies
+            // eg. requires(chassis);
+        	requires(Robot.eleSub);
+        }
+
+        // Called just before this Command runs the first time
+        protected void initialize() {
+        	Robot.eleSub.startCounter2();
+        }
+
+        // Called repeatedly when this Command is scheduled to run
+        protected void execute() {
+        	Robot.eleSub2.ElevatorDown2();
+        }
+
+        // Make this return true when this Command no longer needs to run execute()
+        protected boolean isFinished() {
+            return Robot.eleSub.isSwitchSet2();
+        }
+
+        // Called once after isFinished returns true
+        protected void end() {
+//        	Robot.eleSub.ElevatorStop();
+        }
+
+        // Called when another command which requires one or more of the same
+        // subsystems is scheduled to run
+        protected void interrupted() {
+        }
+    }

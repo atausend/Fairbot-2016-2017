@@ -26,13 +26,14 @@ public class DriveTrain extends Subsystem {
     
     public DriveTrain(){
     	if(RobotMap.usingFourMotors){
+    		// Do 4 motor stuff
+    	}
+    	else{
     	leftMotor = new Victor(RobotMap.LEFT_MOTOR);
     	rightMotor = new Victor(RobotMap.RIGHT_MOTOR);
     	driveTrain = new RobotDrive(leftMotor, rightMotor);
-    	driveTrain.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
-    	driveTrain.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
-    	
-  
+    	//driveTrain.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+    	//driveTrain.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
     	}
     }
 	
@@ -42,15 +43,15 @@ public class DriveTrain extends Subsystem {
     	setDefaultCommand(new DriveWStick());
     }
     
-    public void mecaDrive() {
-    	driveTrain.tankDrive(Robot.oi.driveStick2.getX() * 0.2, Robot.oi.driveStick2.getY() * 0.2);
+    public void fairBotTank() {
+    	driveTrain.tankDrive(Robot.oi.driveStick1.getY(), Robot.oi.driveStick2.getY());
     	
 //    	As of right now (11/29/16) there is a negative value assigned to driveStick2's X value, the robot is strafing backwards this is the current fix.
 //    	Above problem has been fixed as of (12/some date/16)
     	
     }
     
-//    public void autoTank() {
-//    	driveTrain.tankDrive(-.6, .6, true);
-//    }
+    public void autoTank() {
+    	driveTrain.tankDrive(-.6, .6, true);
+    }
 }

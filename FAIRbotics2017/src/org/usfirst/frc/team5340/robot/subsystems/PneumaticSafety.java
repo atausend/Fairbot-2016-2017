@@ -10,12 +10,12 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class Elevator extends Subsystem {
+public class PneumaticSafety extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
-	Solenoid liftMotor = new Solenoid(RobotMap.MAIN_PNU);
+	Solenoid pneumaticSafety = new Solenoid(RobotMap.PNEUMATIC_SAFETY);
 	DigitalInput limit1 = new DigitalInput(0);
 	DigitalInput limit2 = new DigitalInput(1);
 	Counter counter = new Counter(limit1);
@@ -39,12 +39,12 @@ public class Elevator extends Subsystem {
 		counter2.reset();
 	}
 	
-	public void ElevatorUp() {
-		liftMotor.set(true);
+	public void SafetyOn() {
+		//pneumaticSafety.set(true);
 	}
 	
-	public void ElevatorDown() {
-		liftMotor.set(false);
+	public void SafetyOff() {
+		//pneumaticSafety.set(false);
 	}
 	
 

@@ -28,12 +28,18 @@ public class RobotMap {
 	public static int LEFT_MOTOR = 0;
 	public static int RIGHT_MOTOR = 1;
 	
+	//Pneumatics
+	public static int MAIN_PNU =3 ;
+	public static int SECONDARY_PNU = 2 ;
+	public static int PNEUMATIC_SAFETY = 0;
+	public static int PNEUMATIC2 = 1;
+	
 	//Joystick Ports
 	public static final int DRIVE_STICK_PORT = 0;
 	public static final int DRIVE_STICK_PORT_2 = 1;
 
 	//Booleans
-	public static final boolean usingFourMotors = true;
+	public static final boolean usingFourMotors = false;
 	
 	//Subsystems
 }

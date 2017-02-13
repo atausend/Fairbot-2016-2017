@@ -1,7 +1,7 @@
 package org.usfirst.frc.team5340.robot;
 
 import org.usfirst.frc.team5340.robot.commands.ElevatorDown;
-import org.usfirst.frc.team5340.robot.commands.ElevatorStop;
+//import org.usfirst.frc.team5340.robot.commands.ElevatorStop;
 import org.usfirst.frc.team5340.robot.commands.ElevatorUp;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -51,12 +51,18 @@ public class OI {
 		
 		JoystickButton raiseElevatorButton = new JoystickButton(driveStick2, 1);
 		JoystickButton lowerElevatorButton = new JoystickButton(driveStick2, 2);
-		JoystickButton stopElevator = new JoystickButton(driveStick2, 3);
+		JoystickButton raiseElevatorButton2 = new JoystickButton(driveStick1, 1);
+		JoystickButton lowerElevatorButton2 = new JoystickButton(driveStick1, 2);
+//		JoystickButton stopElevator = new JoystickButton(driveStick2, 3);
 		
 		
 		raiseElevatorButton.whenPressed(new ElevatorUp());
 		lowerElevatorButton.whenPressed(new ElevatorDown());
-		stopElevator.whenPressed(new ElevatorStop());
+		raiseElevatorButton2.whenPressed(new ElevatorUp());
+		lowerElevatorButton2.whenPressed(new ElevatorDown());
+//		stopElevator.whenPressed(new ElevatorStop());
 		
 	}
+
+
 }
